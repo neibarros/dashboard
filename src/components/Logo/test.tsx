@@ -6,12 +6,12 @@ import Logo from '.'
 describe('<Logo />', () => {
   it('should render the logo text', () => {
     renderWithTheme(<Logo />)
-    expect(screen.getByRole('heading', { name: /Pay/i })).toBeInTheDocument()
+    expect(screen.getByText(/Pay/i)).toBeInTheDocument()
   })
 
   it('should render the logo with the correct color', () => {
     renderWithTheme(<Logo />)
-    expect(screen.getByRole('heading', { name: /Pay/i })).toHaveStyle({
+    expect(screen.getByText(/Pay/i)).toHaveStyle({
       color: '#14131d'
     })
   })
