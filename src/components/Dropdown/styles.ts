@@ -7,7 +7,7 @@ export const Title = styled.div`
     position: relative;
     display: flex;
     align-items: center;
-    padding-right: 2.4rem;
+    padding-right: 1rem;
   `}
 `
 
@@ -34,7 +34,7 @@ const wrapperModifiers = {
   close: () => css`
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-1rem);
+    transform: translateY(-2rem);
   `
 }
 
