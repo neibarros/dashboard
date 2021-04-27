@@ -49,6 +49,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
       font-family: ${theme.font.family};
+      background-color: ${theme.colors.mainBg};
       font-size: ${theme.font.sizes.medium};
     }
   `}
