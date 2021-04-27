@@ -20,7 +20,7 @@ export const Input = styled.input`
     font-family: ${theme.font.family};
     font-size: ${theme.font.sizes.xsmall};
     font-weight: ${theme.font.light};
-    padding: ${theme.spacings.xxsmall};
+    padding: ${theme.spacings.xsmall} ${theme.spacings.xxsmall};
     background-color: transparent;
     border: 0;
     outline: none;
