@@ -32,7 +32,7 @@ export default {
   },
   spacings: {
     xxsmall: '0.8rem',
-    xsmall: '1.6rem',
+    xsmall: '1.4rem',
     small: '2.4rem',
     medium: '3.2rem',
     large: '4.0rem',
@@ -44,5 +44,8 @@ export default {
     menu: 20,
     overlay: 30,
     alwaysOnTop: 40
+  },
+  transition: {
+    default: '0.2s'
   }
 }
