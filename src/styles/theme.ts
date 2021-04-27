@@ -4,7 +4,7 @@ export default {
     gutter: '3.2rem'
   },
   border: {
-    radius: '20rem'
+    radius: '2.4rem'
   },
   font: {
     family:
@@ -28,7 +28,8 @@ export default {
     white: '#FAFAFA',
     red: '#dc4f3b',
     lightGray: '#e0e5ee',
-    gray: '#d9d9d9'
+    gray: '#d9d9d9',
+    grayDark: '#535353'
   },
   spacings: {
     xxsmall: '0.8rem',

@@ -15,9 +15,8 @@ export const Content = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    background-color: ${theme.colors.primary};
+    background-color: transparent;
     color: ${theme.colors.white};
-    /* margin-top: ${theme.spacings.small}; */
     position: absolute;
     right: 0;
   `}
