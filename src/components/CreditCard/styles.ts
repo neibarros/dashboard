@@ -1,6 +1,9 @@
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
+  position: relative;
+`
+export const CardWrapper = styled.div`
   ${({ theme }) => css`
     background: linear-gradient(
       249.25deg,
@@ -11,26 +14,6 @@ export const Wrapper = styled.div`
     width: 30.5rem;
     height: 20.7rem;
     padding: ${theme.spacings.small};
-    position: relative;
-  `}
-`
-
-type RowProps = {
-  flexDirection?: 'row' | 'column'
-  alignItems?: 'start' | 'center' | 'flex-end'
-  justifyContent?: 'start' | 'space-between'
-}
-
-export const Row = styled.div<RowProps>`
-  ${({
-    flexDirection = 'row',
-    alignItems = 'start',
-    justifyContent = 'start'
-  }) => css`
-    display: flex;
-    flex-direction: ${flexDirection};
-    align-items: ${alignItems};
-    justify-content: ${justifyContent};
   `}
 `
 
@@ -66,7 +49,7 @@ export const Name = styled.div`
   ${({ theme }) => css`
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.xsmall};
-    font-weight: ${theme.font.bold};
+    font-weight: ${theme.font.xbold};
   `}
 `
 
@@ -93,7 +76,7 @@ export const Shadow = styled.span`
   width: 27rem;
   height: 4.2rem;
   background-color: rgba(20, 19, 29, 0.2);
-  z-index: -1;
+  /* z-index: -1; */
 
   &:after {
     content: '';
@@ -104,6 +87,6 @@ export const Shadow = styled.span`
     left: 20px;
     border-radius: 2rem;
     background-color: rgba(20, 19, 29, 0.1);
-    z-index: -1;
+    /* z-index: -1; */
   }
 `

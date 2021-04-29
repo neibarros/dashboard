@@ -33,5 +33,52 @@ export const Content = styled.section`
     margin: ${theme.spacings.small};
     border-radius: 6rem;
     padding: ${theme.spacings.large} ${theme.spacings.xlarge};
+    display: flex;
+  `}
+`
+
+export const FirstColumn = styled.div`
+  ${({ theme }) => css`
+    width: 50%;
+    margin-right: ${theme.grid.gutter};
+  `}
+`
+
+export const DashboardArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5rem;
+  margin-right: 3.2rem;
+`
+
+export const UpcomingArea = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const PaymentCardWrapper = styled.div`
+  display: flex;
+`
+
+export const SalaryWrapper = styled.div`
+  display: flex;
+  margin-right: 2.5rem;
+`
+
+export const PaypalWrapper = styled.div`
+  display: flex;
+`
+
+export const HeadingWrapper = styled.div`
+  ${({ theme }) => css`
+    margin-bottom: ${theme.spacings.medium};
+    margin-left: ${theme.spacings.small};
+  `}
+`
+
+export const SecondColumn = styled.div`
+  ${({ theme }) => css`
+    width: 50%;
+    margin-left: ${theme.grid.gutter};
   `}
 `
