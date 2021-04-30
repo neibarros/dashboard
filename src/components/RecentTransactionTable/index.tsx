@@ -8,6 +8,7 @@ import Dropdown from 'components/Dropdown'
 import RecentTransactions, { TransactionType } from 'mock/transaction'
 import { SorterMode } from 'utils/Sorters/types'
 import Sort from 'utils/Sorters'
+import Currency from 'utils/Formats/Currency'
 import * as S from './styles'
 
 const sortModifiers = {
@@ -73,7 +74,7 @@ const RecentTransactionTable = () => {
                 {format(new Date(item.date), 'dd MMM yyyy hh:mm')}
               </S.Td>
               <S.Td first={index === 0}>
-                <strong>{item.value}</strong>
+                <strong>{Currency.format(item.value)}</strong>
               </S.Td>
               <S.Td first={index === 0} width={20}>
                 <Dropdown title={<DotsVertical color="#AEAEAE" size={20} />}>

@@ -16,7 +16,7 @@ Default.args = {
   icon: <WorkOutline size={32} />,
   title: 'Salary',
   description: 'Belong Interactive',
-  value: '+$2000'
+  value: { isPositive: true, text: 2000 }
 }
 
 export const Paypal: Story<PaymentCardProps> = (args) => (
@@ -27,5 +27,5 @@ Paypal.args = {
   icon: <PaypalIcon size={32} />,
   title: 'Paypal',
   description: 'Freelance payment',
-  value: '$45.00'
+  value: { isPositive: false, text: 45 }
 }

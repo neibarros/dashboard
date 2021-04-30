@@ -1,10 +1,14 @@
+import Currency from 'utils/Formats/Currency'
 import * as S from './styles'
 
 export type PaymentCardProps = {
   icon: React.ReactNode
   title: string
   description: string
-  value: string
+  value: {
+    isPositive: boolean
+    text: number
+  }
 }
 
 const PaymentCard = ({ icon, title, description, value }: PaymentCardProps) => (
@@ -13,7 +17,10 @@ const PaymentCard = ({ icon, title, description, value }: PaymentCardProps) => (
 
     <S.Title>{title}</S.Title>
     <S.Description>{description}</S.Description>
-    <S.Value>{value}</S.Value>
+    <S.Value>
+      {value.isPositive && '+'}
+      {Currency.format(value.text)}
+    </S.Value>
   </S.Wrapper>
 )
 

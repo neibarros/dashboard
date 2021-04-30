@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-type RowProps = {
+export type RowProps = {
   flexDirection?: 'row' | 'column'
   alignItems?: 'start' | 'center' | 'flex-end'
   justifyContent?: 'start' | 'space-between'

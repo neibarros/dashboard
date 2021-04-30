@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components'
 export const Wrapper = styled.div`
   position: relative;
   padding-top: 40px;
+  z-index: 1;
 `
 
 export const ShadowFirst = styled.span`
@@ -50,6 +51,7 @@ export const CardWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: ${theme.spacings.medium};
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.3);
   `}
 `
 

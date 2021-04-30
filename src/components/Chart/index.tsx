@@ -1,57 +1,58 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ChartData, ChartOptions } from 'chart.js'
+import { ChartOptions } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 
-function getGradient(ctx: any, chartArea: any) {
-  let width, height, gradient
-  const chartWidth = chartArea.right - chartArea.left
-  const chartHeight = chartArea.bottom - chartArea.top
-  if (gradient === null || width !== chartWidth || height !== chartHeight) {
-    width = chartWidth
-    height = chartHeight
-    gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top)
-    gradient.addColorStop(0, '#F3F5FA')
-    gradient.addColorStop(0.5, '#C6C9CB')
-  }
+import { FilterType } from '../ColChart'
 
-  return gradient
+const dataMap = {
+  day: {
+    labels: ['10am', '11:30am', '12pm', '15pm', '17pm'],
+    data: [15, 8, 2, 12, 20]
+  },
+  week: {
+    labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    data: [2, 6, 3, 8, 4, 9, 7]
+  },
+  month: {
+    labels: ['May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov'],
+    data: [18, 29, 22, 12, 23, 36, 21]
+  },
+  year: {
+    labels: ['2018', '2019', '2020', '2021'],
+    data: [56, 87, 96, 150]
+  }
 }
 
-const data: ChartData = {
-  labels: ['May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov'],
+type Data = (filter: FilterType) => void
+
+const data: Data = (filter) => ({
+  labels: dataMap[filter].labels,
   datasets: [
     {
       type: 'line',
-      label: '',
-      data: [18, 29, 22, 12, 23, 36, 21],
-      fill: true,
-      backgroundColor: (context: any) => {
-        const chart = context.chart
-        const { ctx, chartArea } = chart
-
-        if (!chartArea) {
-          return null
-        }
-        return getGradient(ctx, chartArea)
-      },
+      label: 'Value',
+      data: dataMap[filter].data,
+      fill: false,
       pointBorderWidth: 6,
+      pointHoverBorderWidth: 6,
       pointRadius: 8,
+      pointHoverRadius: 8,
       pointBackgroundColor: '#14131d',
       pointBorderColor: 'white',
       borderWidth: 6,
+      hoverBorderWidth: 6,
       borderColor: '#14131d',
       tension: 0.4
     }
   ]
-}
+})
 
 const options: ChartOptions = {
   responsive: true,
   plugins: {
     legend: {
       display: false
-    },
-    tooltip: {}
+    }
   },
   scales: {
     y: {
@@ -68,23 +69,28 @@ const options: ChartOptions = {
     },
     x: {
       grid: {
-        display: false,
-        drawBorder: false,
         drawTicks: false,
-        drawOnChartArea: false
+        borderColor: '#d9d9d9',
+        color: '#d9d9d9'
       },
       ticks: {
-        color: '#AEAEAE',
+        color: '#8b8b8b',
         font: {
           size: 16,
           family: 'Be Vietnam',
-          weight: '400'
+          weight: '600'
         }
       }
     }
   }
 }
 
-const Chart = () => <Line data={data} options={options} />
+export type ChartProps = {
+  filterData: FilterType
+}
+
+const Chart = ({ filterData }: ChartProps) => (
+  <Line data={data(filterData)} options={options} />
+)
 
 export default Chart
