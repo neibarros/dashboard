@@ -58,22 +58,41 @@ export const Button = styled.button`
   `}
 `
 
-export const Table = styled.table`
-  width: 100%;
-  border: none;
+export const Table = styled.ul`
+  list-style: none;
 `
 
-export const Td = styled.td<{ first: boolean }>`
-  ${({ theme, first }) => css`
-    padding: calc(${theme.spacings.xsmall} + 0.6rem) ${theme.spacings.xsmall};
+export const Tr = styled.li`
+  ${({ theme }) => css`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid ${theme.colors.gray};
+  `}
+`
+
+type TdProps = {
+  width?: string
+  justifyContent?: 'start' | 'center' | 'flex-end'
+}
+
+export const Td = styled.div<TdProps>`
+  ${({ theme, width = '30%', justifyContent = 'start' }) => css`
+    padding: calc(${theme.spacings.xsmall} + 0.6rem) ${theme.spacings.xxsmall};
     font-size: ${theme.font.sizes.medium};
-    border-top: ${first ? 'none' : `1px solid ${theme.colors.gray}`};
-    font-weight: ${theme.font.bold};
+    font-weight: ${theme.font.normal};
+    width: ${width};
+    color: ${theme.colors.primary};
+    /* color: rgb(149, 148, 150); */
+    display: flex;
+    justify-content: ${justifyContent};
   `}
 `
 
 export const Icon = styled.img`
-  width: 3.2rem;
+  min-width: 3.2rem;
+  height: 3.2rem;
 `
 
 export const Nav = styled.nav`

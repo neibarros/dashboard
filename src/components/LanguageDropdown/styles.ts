@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const WrapperTitle = styled.div`
   display: flex;
@@ -20,6 +21,10 @@ export const Nav = styled.nav`
     background-color: ${theme.colors.primary};
     border-radius: ${theme.border.radius};
     padding: 0 ${theme.spacings.xxsmall};
+
+    ${media.lessThan('medium')`
+      width: 20rem;
+    `}
   `}
 `
 

@@ -1,14 +1,15 @@
 import { WorkOutline } from '@styled-icons/material-outlined/WorkOutline'
 import { Paypal } from '@styled-icons/remix-line/Paypal'
 
+import ColChart from 'components/ColChart'
 import CreditCard from 'components/CreditCard'
 import Header from 'components/Header'
 import RecentTransactionTable from 'components/RecentTransactionTable'
 import Menu from 'components/Menu'
 import PaymentCard from 'components/PaymentCard'
+import Heading from 'components/Heading'
 import { Row } from 'components/Row'
 import * as S from 'styles/home'
-import Heading from 'components/Heading'
 
 export default function Home() {
   return (
@@ -43,7 +44,10 @@ export default function Home() {
                     icon={<WorkOutline size={32} />}
                     title="Salary"
                     description="Belong Interactive"
-                    value="+$2000"
+                    value={{
+                      isPositive: true,
+                      text: 2000
+                    }}
                   />
                 </S.SalaryWrapper>
 
@@ -52,7 +56,10 @@ export default function Home() {
                     icon={<Paypal size={32} />}
                     title="Paypal"
                     description="Freelance payment"
-                    value="$45.00"
+                    value={{
+                      isPositive: false,
+                      text: 45
+                    }}
                   />
                 </S.PaypalWrapper>
               </S.PaymentCardWrapper>
@@ -62,7 +69,9 @@ export default function Home() {
           <RecentTransactionTable />
         </S.FirstColumn>
 
-        <S.SecondColumn>Graphic</S.SecondColumn>
+        <S.SecondColumn>
+          <ColChart />
+        </S.SecondColumn>
       </S.Content>
     </S.Container>
   )

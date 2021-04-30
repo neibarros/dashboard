@@ -60,34 +60,32 @@ const RecentTransactionTable = () => {
         </S.Filter>
       </S.HeaderTable>
 
-      <S.Table cellSpacing={0} cellPadding={0}>
-        <tbody>
-          {transactions.map((item, index) => (
-            <tr key={item.id}>
-              <S.Td first={index === 0} width={80}>
-                <S.Icon src={item.icon} />
-              </S.Td>
-              <S.Td first={index === 0}>
-                <strong>{item.type}</strong>
-              </S.Td>
-              <S.Td first={index === 0} style={{ color: '#AEAEAE' }}>
-                {format(new Date(item.date), 'dd MMM yyyy hh:mm')}
-              </S.Td>
-              <S.Td first={index === 0}>
-                <strong>{Currency.format(item.value)}</strong>
-              </S.Td>
-              <S.Td first={index === 0} width={20}>
-                <Dropdown title={<DotsVertical color="#AEAEAE" size={20} />}>
-                  <S.Nav>
-                    <S.Link>Apple pay</S.Link>
-                    <S.Link>Tranfer to account</S.Link>
-                    <S.Link>Report for transaction</S.Link>
-                  </S.Nav>
-                </Dropdown>
-              </S.Td>
-            </tr>
-          ))}
-        </tbody>
+      <S.Table>
+        {transactions.map((item) => (
+          <S.Tr key={item.id}>
+            <S.Td width="15%">
+              <S.Icon src={item.icon} />
+            </S.Td>
+            <S.Td width="35%">
+              <strong>{item.type}</strong>
+            </S.Td>
+            <S.Td width="50%">
+              {format(new Date(item.date), 'dd MMM yyyy hh:mm')}
+            </S.Td>
+            <S.Td>
+              <strong>{Currency.format(item.value)}</strong>
+            </S.Td>
+            <S.Td width="20%" justifyContent="flex-end">
+              <Dropdown title={<DotsVertical color="#AEAEAE" size={20} />}>
+                <S.Nav>
+                  <S.Link>Apple pay</S.Link>
+                  <S.Link>Tranfer to account</S.Link>
+                  <S.Link>Report for transaction</S.Link>
+                </S.Nav>
+              </Dropdown>
+            </S.Td>
+          </S.Tr>
+        ))}
       </S.Table>
     </S.Wrapper>
   )
