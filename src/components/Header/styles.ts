@@ -56,7 +56,7 @@ type MenuFullProps = {
   isOpen: boolean
 }
 
-export const MenuFull = styled.nav<MenuFullProps>`
+export const MenuFull = styled(motion.nav)<MenuFullProps>`
   ${({ theme, isOpen }) => css`
     display: flex;
     flex-direction: column;
@@ -67,10 +67,10 @@ export const MenuFull = styled.nav<MenuFullProps>`
     bottom: 0;
     left: 0;
     right: 0;
-    height: 110vh;
+    height: 104.5vh;
     overflow: hidden;
-    transition: opacity 0.3s ease-in-out;
-    opacity: ${isOpen ? 1 : 0};
+    /* transition: opacity 0.3s ease-in-out; */
+    /* opacity: ${isOpen ? 1 : 0}; */
     pointer-events: ${isOpen ? 'all' : 'none'};
     z-index: ${theme.layers.alwaysOnTop};
 
@@ -80,8 +80,8 @@ export const MenuFull = styled.nav<MenuFullProps>`
       right: 0;
       margin: ${theme.spacings.xsmall};
       cursor: pointer;
-      width: 2.4rem;
-      height: 2.4rem;
+      width: 3.4rem;
+      height: 3.4rem;
     }
 
     ${MenuWrapper} {

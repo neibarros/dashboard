@@ -69,7 +69,7 @@ const RecentTransactionTable = () => {
             <S.Td width="35%">
               <strong>{item.type}</strong>
             </S.Td>
-            <S.Td width="50%">
+            <S.Td width="50%" color="#959496">
               {format(new Date(item.date), 'dd MMM yyyy hh:mm')}
             </S.Td>
             <S.Td>

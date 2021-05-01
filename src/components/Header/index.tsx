@@ -12,6 +12,11 @@ import MediaMatch from 'components/MediaMatch'
 
 import * as S from './styles'
 
+const variants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: '-100%' }
+}
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -40,7 +45,12 @@ const Header = () => {
       </S.Item>
 
       <MediaMatch lessThan="medium">
-        <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
+        <S.MenuFull
+          aria-hidden={!isOpen}
+          isOpen={isOpen}
+          animate={isOpen ? 'open' : 'closed'}
+          variants={variants}
+        >
           <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
 
           <S.MenuWrapper>

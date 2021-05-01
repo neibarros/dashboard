@@ -79,16 +79,16 @@ export const Tr = styled.li`
 type TdProps = {
   width?: string
   justifyContent?: 'start' | 'center' | 'flex-end'
+  color?: string
 }
 
 export const Td = styled.div<TdProps>`
-  ${({ theme, width = '30%', justifyContent = 'start' }) => css`
+  ${({ theme, width = '30%', justifyContent = 'start', color }) => css`
     padding: calc(${theme.spacings.xsmall} + 0.6rem) ${theme.spacings.xxsmall};
     font-size: ${theme.font.sizes.medium};
     font-weight: ${theme.font.normal};
     width: ${width};
-    color: ${theme.colors.primary};
-    /* color: rgb(149, 148, 150); */
+    color: ${color ? color : theme.colors.primary};
     display: flex;
     justify-content: ${justifyContent};
   `}
