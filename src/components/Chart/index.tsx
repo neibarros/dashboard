@@ -90,7 +90,7 @@ export type ChartProps = {
 }
 
 const Chart = ({ filterData }: ChartProps) => (
-  <Line data={data(filterData)} options={options} />
+  <Line type="line" data={data(filterData)} options={options} />
 )
 
 export default Chart

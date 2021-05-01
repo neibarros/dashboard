@@ -12,7 +12,7 @@ export const ShadowFirst = styled.span`
   top: 28px;
   left: 25px;
   border-radius: 3rem;
-  width: 27rem;
+  width: 83%;
   height: 4.2rem;
   background: rgba(125, 125, 125, 0.5);
   z-index: -1;
@@ -23,7 +23,7 @@ export const ShadowSecond = styled.span`
   top: 15px;
   left: 50px;
   border-radius: 3rem;
-  width: 22rem;
+  width: 63%;
   height: 8rem;
   background: rgba(125, 125, 125, 0.2);
   z-index: -1;
@@ -32,9 +32,9 @@ export const ShadowSecond = styled.span`
     content: '';
     position: absolute;
     top: -10px;
-    left: 40px;
+    left: 35px;
     border-radius: 3rem;
-    width: 15rem;
+    width: 63%;
     height: 10rem;
     background: rgba(125, 125, 125, 0.1);
     z-index: -1;
@@ -44,8 +44,8 @@ export const ShadowSecond = styled.span`
 export const CardWrapper = styled.div`
   ${({ theme }) => css`
     background-color: ${theme.colors.primary};
-    width: 33.2rem;
-    height: 14.6rem;
+    width: 28rem;
+    height: 15rem;
     border-radius: 2.7rem;
     display: flex;
     align-items: center;

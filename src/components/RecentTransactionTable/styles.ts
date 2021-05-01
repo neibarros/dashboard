@@ -69,6 +69,10 @@ export const Tr = styled.li`
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid ${theme.colors.gray};
+
+    &:last-child {
+      border-bottom: 0;
+    }
   `}
 `
 

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { SideProps } from '.'
 
 export const Title = styled.div`
   ${({ theme }) => css`
@@ -8,21 +9,29 @@ export const Title = styled.div`
     display: flex;
     align-items: center;
     padding-right: 1rem;
-    z-index: ${theme.layers.alwaysOnTop - 1};
+    z-index: ${theme.layers.dropdown - 1};
   `}
 `
 
-export const Content = styled.div`
-  ${({ theme }) => css`
+export const Content = styled.div<{ side?: SideProps }>`
+  ${({ theme, side = 'bottom' }) => css`
     display: flex;
     flex-direction: column;
     background-color: transparent;
     color: ${theme.colors.white};
     position: absolute;
-    right: 0;
-    z-index: ${theme.layers.alwaysOnTop};
+    z-index: ${theme.layers.dropdown};
     border-radius: ${theme.border.radius};
     box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    right: 0;
+
+    ${side === 'left'
+      ? css`
+          top: 0;
+        `
+      : css`
+          right: 0;
+        `}
   `}
 `
 
@@ -39,22 +48,23 @@ export const Overlay = styled.div`
 
 type WrapperProps = {
   isOpen?: boolean
+  side?: SideProps
 }
 
 const wrapperModifiers = {
-  open: () => css`
+  open: (side: SideProps) => css`
     opacity: 1;
-    transform: translateY(0);
+    transform: ${side === 'left' ? 'translateX(-3rem)' : 'translateY(0)'};
   `,
-  close: () => css`
+  close: (side: SideProps) => css`
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-2rem);
+    transform: ${side === 'left' ? 'translateX(0)' : 'translateY(-2rem)'};
   `
 }
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, isOpen }) => css`
+  ${({ theme, isOpen, side = 'bottom' }) => css`
     position: relative;
     width: max-content;
 
@@ -63,8 +73,8 @@ export const Wrapper = styled.div<WrapperProps>`
       transition: transform ${theme.transition.default} ease-in,
         opacity ${theme.transition.default};
 
-      ${isOpen && wrapperModifiers.open()};
-      ${!isOpen && wrapperModifiers.close()};
+      ${isOpen && wrapperModifiers.open(side)};
+      ${!isOpen && wrapperModifiers.close(side)};
     }
   `}
 `

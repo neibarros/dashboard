@@ -14,6 +14,7 @@ export const CardWrapper = styled.div`
     width: 30.5rem;
     height: 20.7rem;
     padding: ${theme.spacings.small};
+    z-index: 1;
   `}
 `
 
@@ -76,7 +77,7 @@ export const Shadow = styled.span`
   width: 27rem;
   height: 4.2rem;
   background-color: rgba(20, 19, 29, 0.2);
-  z-index: -1;
+  z-index: 0;
 
   &:after {
     content: '';
@@ -87,6 +88,6 @@ export const Shadow = styled.span`
     left: 20px;
     border-radius: 2rem;
     background-color: rgba(20, 19, 29, 0.1);
-    z-index: -1;
+    z-index: 0;
   }
 `

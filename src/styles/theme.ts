@@ -1,6 +1,6 @@
 export default {
   grid: {
-    container: '100%',
+    container: '130rem',
     gutter: '3.2rem'
   },
   border: {
@@ -45,7 +45,8 @@ export default {
     base: 10,
     menu: 20,
     overlay: 30,
-    alwaysOnTop: 40
+    dropdown: 40,
+    alwaysOnTop: 50
   },
   transition: {
     default: '0.2s'

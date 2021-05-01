@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   ${({ theme }) => css`
-    width: 43.2rem;
-    height: 76.3rem;
+    width: 100%;
+    height: 73rem;
     padding: 3rem 2.4rem 6rem;
     background: ${theme.colors.mainBg};
     border-radius: 5rem;

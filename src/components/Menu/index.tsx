@@ -8,7 +8,11 @@ import { Settings } from '@styled-icons/fluentui-system-regular/Settings'
 import * as S from './styles'
 
 const Menu = () => (
-  <S.Wrapper>
+  <S.Wrapper
+    animate={{ x: 0 }}
+    initial={{ x: -50 }}
+    transition={{ ease: 'easeOut', duration: '0.5' }}
+  >
     <S.Item>
       <Home size={28} />
     </S.Item>

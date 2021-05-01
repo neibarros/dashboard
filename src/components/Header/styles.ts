@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
+import { motion } from 'framer-motion'
 
-export const Wrapper = styled.header`
+export const Wrapper = styled(motion.header)`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,8 +27,6 @@ export const Item = styled.div`
 
 export const WrapperLogo = styled.div`
   ${({ theme }) => css`
-    margin-left: ${theme.spacings.small};
-
     ${media.lessThan('medium')`
       margin-left: ${theme.spacings.xsmall};
     `}
@@ -63,17 +62,17 @@ export const MenuFull = styled.nav<MenuFullProps>`
     flex-direction: column;
     justify-content: space-between;
     background: ${theme.colors.white};
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100%;
+    height: 110vh;
     overflow: hidden;
     transition: opacity 0.3s ease-in-out;
     opacity: ${isOpen ? 1 : 0};
     pointer-events: ${isOpen ? 'all' : 'none'};
-    z-index: 1;
+    z-index: ${theme.layers.alwaysOnTop};
 
     > svg {
       position: absolute;

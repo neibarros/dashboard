@@ -76,7 +76,10 @@ const RecentTransactionTable = () => {
               <strong>{Currency.format(item.value)}</strong>
             </S.Td>
             <S.Td width="20%" justifyContent="flex-end">
-              <Dropdown title={<DotsVertical color="#AEAEAE" size={20} />}>
+              <Dropdown
+                title={<DotsVertical color="#AEAEAE" size={20} />}
+                side="left"
+              >
                 <S.Nav>
                   <S.Link>Apple pay</S.Link>
                   <S.Link>Tranfer to account</S.Link>

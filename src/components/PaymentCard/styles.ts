@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     background-color: ${theme.colors.mainBg};
-    width: 17rem;
+    width: 16.2rem;
     height: 20.5rem;
     border-radius: 3.5rem;
     display: flex;

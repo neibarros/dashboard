@@ -16,7 +16,11 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <S.Wrapper>
+    <S.Wrapper
+      animate={{ y: 0 }}
+      initial={{ y: -50 }}
+      transition={{ ease: 'easeOut', duration: '0.5' }}
+    >
       <S.Item>
         <MediaMatch lessThan="medium">
           <S.IconWrapper onClick={() => setIsOpen(true)}>
